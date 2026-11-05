@@ -34,7 +34,7 @@ public class App {
             "CAZARRECOMPENSAS"
         };
 
-        String[] enemigos = {
+        final String[] enemigos = {
             "DRON DE GUERRA",
             "MUTANTE PISTOLERO",
             "BANDIDO",
@@ -185,6 +185,8 @@ public class App {
                         case "MUTANTE PISTOLERO": vidaEnemigo = 24 + random.nextInt(13); ataqueEnemigo = 10 + random.nextInt(15); defensaEnemigo = 6 + random.nextInt(4); break;
                         case "BANDIDO": vidaEnemigo = 18 + random.nextInt(17); ataqueEnemigo = 8 + random.nextInt(15); defensaEnemigo = 6 + random.nextInt(4); break;
                         case "CAZADOR ROBOT": vidaEnemigo = 18 + random.nextInt(17); ataqueEnemigo = 14 + random.nextInt(15); defensaEnemigo = 8 + random.nextInt(16); break;
+                        default:
+                            vidaEnemigo = 20; ataqueEnemigo = 10; defensaEnemigo = 5;
                     }
 
                     System.out.println("\n");
@@ -196,6 +198,61 @@ public class App {
                     System.out.println(ROJO + " ATAQUE: " + ataqueEnemigo + RESET);
                     System.out.println(ROJO + " DEFENSA: " + defensaEnemigo + RESET);
                     System.out.println(ROJO + "|====================================|" + RESET);
+
+                    boolean combateActivo = true
+
+                    while (combateActivo && vida > 0 && vidaEnemigo > 0) {
+
+                        int accion;
+
+                        System.out.println(AZUL + "|---------------------|" + RESET);
+                        System.out.println(AZUL + "|   TURNO DE ELEGIR   |" + RESET);
+                        System.out.println(AZUL + "|---------------------|" + RESET);
+                        System.out.println(AZUL + "| 1. ATACAR           |" + RESET);
+                        System.out.println(AZUL + "| 2. DEFENDER         |" + RESET);
+                        System.out.println(AZUL + "| 2. HUIR             |" + RESET);
+                        System.out.println(AZUL + "|---------------------|" + RESET);
+                        System.out.println("\n");
+                        System.out.println(AMARILLO + "SELECCIONA UNA ACCION: " +  RESET);
+                        accion = scanner.nextInt();
+                        scanner.nextLine();
+
+                        int defender = 0;
+
+                        switch (accion) {
+                            case 1:
+                                int dañoJugador = Math.max(1, ataque + random.nextInt(6) - defensaEnemigo);
+                                vidaEnemigo -= dañoJugador;
+                                System.out.println(VERDE + "¡" + nombre + " hizo" + dañoJugador + " de daño!");
+                                System.out.println(AMARILLO + "A " + enemigo + "le quedan " + Math.max(0, vidaEnemigo) + RESET);
+                                break;
+
+                            case 2:
+                                defender = defensa + 5;
+                                System.out.println(VERDE + nombre + " se pone en posicion de defensa" + RESET);
+                                break;
+
+                            case 3:
+                                if (random.nextInt(10) < 5) {
+                                    System.out.println(AMARILLO + nombre + " escapo con éxito" + RESET);
+                                    combateActivo = false
+                                } else {
+                                    System.out.println(ROJO + "No pudistes escapar del combate" + RESET);
+                                }
+                                break;
+
+                            default:
+                                System.out.println(ROJO +  "OPCION INVALIDA" + RESET);
+                                break;
+                        }
+
+                        if (combateActivo && vidaEnemigo > 0) {
+                            int dañoEnemigo = Math.max(1, ataqueEnemigo + random.nextInt(5) - (defensa + defender));
+                            vida -= dañoEnemigo;
+                            System.out.println(ROJO + enemigo + " te ha atacado y te ha causado " +  dañoEnemigo + " de daño" + RESET);
+                        }
+
+                    }
                 }
 
                 break;
