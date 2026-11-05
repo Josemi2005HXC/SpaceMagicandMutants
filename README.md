@@ -19,4 +19,6 @@ Esta sera nuestra pequeña guia sobre los roles, especies y los enemigos, dandon
 Aqui es donde empezara nuestra aventura, deberemos elegir una especie dentro de las indicadas y un rol dentro de los indicados, dependiendo de nuestra especie y rol tendremos una ventajas, desventajas y comportamiento diferentes.
 
 
+## v0.1.0:
 
+De momento la version del juego solo implementa un menu, selecciom de roles y especie, pequeños dialogos segun el rol y combates con enemigos como lo son Bandidos, Mutantes, Robots y drones.
