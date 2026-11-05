@@ -219,6 +219,8 @@ public class App {
 
                         int defender = 0;
 
+
+                        //*Establecemos que las acciones que puedes hacer en tu turno, en este caso Atacar, huir y poner se en posicion de defensa */
                         switch (accion) {
                             case 1:
                                 int dañoJugador = Math.max(1, ataque + random.nextInt(6) - defensaEnemigo);
@@ -250,11 +252,50 @@ public class App {
                             int dañoEnemigo = Math.max(1, ataqueEnemigo + random.nextInt(5) - (defensa + defender));
                             vida -= dañoEnemigo;
                             System.out.println(ROJO + enemigo + " te ha atacado y te ha causado " +  dañoEnemigo + " de daño" + RESET);
+                            System.out.println(AMARILLO + "Te quedan: " + Math.max(0, vida) + " puntos de vida" + RESET);
                         }
 
                     }
+
+                    if (vidaEnemigo <= 0 && vida > 0) {
+                        System.out.println("\n");
+                        System.out.println(VERDE + "|==============================|" + RESET);
+                        System.out.println(VERDE + "       ¡ENEMIGO DERROTADO!     " + RESET);
+                        System.out.println(VERDE + "|==============================|" + RESET);
+
+                        if (rol.equals("BRUJO") && !enemigo.equals("DRON DE GUERRA")) {
+                            System.out.println(AMARILLO + "El brujo observa el cuerpo sin vida del " + enemigo.toLowerCase() + " y comienza el pequeño ritual, todo siervo del Kaos debe obtener sus sustento." + RESET);
+                            System.out.println(AMARILLO + "Una vez terminado el ritual, el brujo continua su peregrinaje por esta tierra maldita." + RESET);
+                        }else if (rol.equals("SOLDADO") && enemigo.equals("DRON DE GUERRA")) {
+                            System.out.println(AMARILLO + "Miras los restos del dron de guerra ardiendo en la arena del yermo, recuerdas a esas viejas pero mortiferas armas de una antigua guerra que pensaste haber olvidado."  + RESET);
+                            System.out.println(AMARILLO + "Los recuerdos te queman por dentro, pero no expresas nada, solo sigues tu camino en busca de una escapatoria de este planeta asolado...");
+                        }else if(rol.equals("FANATICO")){
+                            System.out.println("Estas exausto por el combate, pero aun asi sigues, todo sea por tu señor todo poderoso y su palabra.");
+                            System.out.println("Sigues tu camino, agarrando el rosario como un clavo ardiente y repitiendo en tu mente los versiculos del todo poderoso...");
+                        }else if (rol.equals("CAZARRECOMPENSAS")) {
+                            System.out.println(AMARILLO + nombre + ": Y ahora un trago, porque me lo merezco --" + RESET);
+                            System.out.println(AMARILLO + "Sacas tu botella de Jack, pero te das cuenta de que ya no queda nada" + RESET);
+                            System.out.println(AMARILLO + nombre + ": ¡ME CAGO EN SU PUTA MADRE --, gritas" + RESET);
+                            System.out.println(AMARILLO + nombre + ": Tendre que reabastecerme en la siguiente ciudad, espero que el hombre al que estoy dando caza merezca la pena --" + RESET);
+
+                        }   
+                    }else if (vida <= 0) {
+                        System.out.println("\n");
+                        System.out.println(ROJO + "|==============================|" + RESET);
+                        System.out.println(ROJO + "           HAS MUERTO          " + RESET);
+                        System.out.println(ROJO + "|==============================|" + RESET);
+                    }
+
+                    if (vida > 0) {
+                        System.out.println(AMARILLO + "\n¿Desea continuar combatiendo? (s/n)" + RESET);
+                        String respuesta = scanner.nextLine().trim().toLowerCase();
+                        combatir = respuesta.equals("s") || respuesta.equals("si");
+                    }
                 }
 
+                if (vida <= 0) {
+                    
+                }
                 break;
                 
 
