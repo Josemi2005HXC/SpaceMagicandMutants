@@ -53,31 +53,22 @@ public class App {
         System.out.println(MORADO + "|---------------------|" + RESET);
         System.out.println(MORADO + "|-------Opciones------|" + RESET);
         System.out.println(MORADO + "|---------------------|" + RESET);
-        System.out.println(MORADO + "|HISTORIA: 1          |" + RESET);
-        System.out.println(MORADO + "|GUIA: 2              |" + RESET);
-        System.out.println(MORADO + "|EMPEZAR: 3           |" + RESET);
+        System.out.println(MORADO + "|GUIA: 1              |" + RESET);
+        System.out.println(MORADO + "|EMPEZAR: 2           |" + RESET);
         System.out.println(MORADO + "|---------------------|\n" + RESET);
         System.out.print(VERDE + "Seleccione una opcion: " + RESET);
         int OPCION_MENU = scanner.nextInt();
         scanner.nextLine();
         
         switch (OPCION_MENU) {
-            case 1:
-                System.out.println(ROJO + "|---------------------|" + RESET);
-                System.out.println(ROJO + "|-------HISTORIA------|" + RESET);
-                System.out.println(ROJO + "|---------------------|\n" + RESET);
-                System.out.println(ROJO + "+---------------------------------------------+" + RESET);
-                System.out.println(ROJO + "| En un futuro distante y desconocido...      |" + RESET);
-                System.out.println(ROJO + "+---------------------------------------------+" + RESET);
-                break;
 
-            case 2:
+            case 1:
                 System.out.println(VERDE + "|---------------------|" + RESET);
                 System.out.println(VERDE + "|---------GUIA--------|" + RESET);
                 System.out.println(VERDE + "|---------------------|" + RESET);
                 break;
 
-            case 3:
+            case 2:
                 String nombre;
 
                 System.out.print(AMARILLO +  "Escriba el nombre de su personaje: " + RESET);
@@ -147,7 +138,7 @@ public class App {
                     case "FANATICO": vida += 8; defensa += 7; break;
                     case "BANDIDO": agilidad += 6; ataque += 3; break;
                     case "GUERRERO": defensa += 6; ataque += 5; agilidad += 2; break;
-                    case "CAZARRECOMPENSAS": agilidad += 8; ataque += 2; break;
+                    case "CAZARRECOMPENSAS": agilidad += 8; ataque += 4; break;
                 }
                 
                 System.out.println(NARANJA + "|---------------------|" + RESET);
@@ -204,6 +195,8 @@ public class App {
                     while (combateActivo && vida > 0 && vidaEnemigo > 0) {
 
                         int accion;
+
+                        //*A la hora de elegir accion, se debe ingresar un numero entero, si se intenta ingresar un texto va a saltar error */
 
                         System.out.println(AZUL + "|---------------------|" + RESET);
                         System.out.println(AZUL + "|   TURNO DE ELEGIR   |" + RESET);
@@ -263,6 +256,13 @@ public class App {
                         System.out.println(VERDE + "       ¡ENEMIGO DERROTADO!     " + RESET);
                         System.out.println(VERDE + "|==============================|" + RESET);
 
+                        //*Esto es una pequeña prueba para mejorar y expandir en el futuro, con .equals 
+                        // lo que se busca es que segun el rol o especie seleccionadas
+                        // nuestros dialogos y opciones de interaccion varien entre si, ejemplos como que un simple lugar 
+                        // traiga malos recuerdos de la guerra a un soldado, 
+                        // comentarios racistas del fanatico hacia impuros (aliens y mutantes) u hostiles contra los blasfemos (brujos),
+                        // ser recibido con insultos en cientos lugares si somos un mutante*/
+
                         if (rol.equals("BRUJO") && !enemigo.equals("DRON DE GUERRA")) {
                             System.out.println(AMARILLO + "El brujo observa el cuerpo sin vida del " + enemigo.toLowerCase() + " y comienza el pequeño ritual, todo siervo del Kaos debe obtener sus sustento." + RESET);
                             System.out.println(AMARILLO + "Una vez terminado el ritual, el brujo continua su peregrinaje por esta tierra maldita." + RESET);
@@ -275,7 +275,7 @@ public class App {
                         }else if (rol.equals("CAZARRECOMPENSAS")) {
                             System.out.println(AMARILLO + nombre + ": Y ahora un trago, porque me lo merezco --" + RESET);
                             System.out.println(AMARILLO + "Sacas tu botella de Jack, pero te das cuenta de que ya no queda nada" + RESET);
-                            System.out.println(AMARILLO + nombre + ": ¡ME CAGO EN SU PUTA MADRE --, gritas" + RESET);
+                            System.out.println(AMARILLO + nombre + ": ¡ME CAGO EN SU PUTA MADRE --, gritas" + RESET); //*Esto puede dar pie a un futuro sistema de rasgos: alcoholismo, cleptomania, empatia... */
                             System.out.println(AMARILLO + nombre + ": Tendre que reabastecerme en la siguiente ciudad, espero que el hombre al que estoy dando caza merezca la pena --" + RESET);
 
                         }   
