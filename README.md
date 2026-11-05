@@ -8,14 +8,15 @@ Nuestro personaje empieza en el mundo muerto, un planeta antes prospero pero deb
 
 El combate sera por turnos, en cada uno de nuestros turnos deberemos elegir nuestras acciones.
 
-    OPCIONES DEL MENU:
+## OPCIONES DEL MENU:
 
-    1. GUIA:
+## 1. GUIA:
 
-    Esta sera nuestra pequeña guia sobre los roles, especies y los enemigos, dandonos informacion tanto de su comportamiento en combate como de su transfondo.
+Esta sera nuestra pequeña guia sobre los roles, especies y los enemigos, dandonos informacion tanto de su comportamiento en combate como de su transfondo.
 
-    2. EMPEZAR:
-    Aqui es donde empezara nuestra aventura, deberemos elegir una especie dentro de las indicadas y un rol dentro de los indicados, dependiendo de nuestra especie y rol tendremos una ventajas, desventajas y comportamiento diferentes.
+## 2. EMPEZAR:
+
+Aqui es donde empezara nuestra aventura, deberemos elegir una especie dentro de las indicadas y un rol dentro de los indicados, dependiendo de nuestra especie y rol tendremos una ventajas, desventajas y comportamiento diferentes.
 
 
 
