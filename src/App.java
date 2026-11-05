@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scanner =new Scanner (System.in);
         Random random =new Random();
 
@@ -124,7 +124,7 @@ public class App {
                     rol = scanner.nextLine().trim().toUpperCase();
 
                     if (!Arrays.asList(ROLES).contains(rol)) {
-                        System.out.println(ROJO + "OPCION NO EXISTENTE, PRUEBE OTRA VEZ");
+                        System.out.println(ROJO + "OPCION NO EXISTENTE, PRUEBE OTRA VEZ" + RESET);
                     }
                 } while (!Arrays.asList(ROLES).contains(rol));
 
@@ -199,7 +199,7 @@ public class App {
                     System.out.println(ROJO + " DEFENSA: " + defensaEnemigo + RESET);
                     System.out.println(ROJO + "|====================================|" + RESET);
 
-                    boolean combateActivo = true
+                    boolean combateActivo = true;
 
                     while (combateActivo && vida > 0 && vidaEnemigo > 0) {
 
@@ -210,7 +210,7 @@ public class App {
                         System.out.println(AZUL + "|---------------------|" + RESET);
                         System.out.println(AZUL + "| 1. ATACAR           |" + RESET);
                         System.out.println(AZUL + "| 2. DEFENDER         |" + RESET);
-                        System.out.println(AZUL + "| 2. HUIR             |" + RESET);
+                        System.out.println(AZUL + "| 3. HUIR             |" + RESET);
                         System.out.println(AZUL + "|---------------------|" + RESET);
                         System.out.println("\n");
                         System.out.println(AMARILLO + "SELECCIONA UNA ACCION: " +  RESET);
@@ -225,8 +225,8 @@ public class App {
                             case 1:
                                 int dañoJugador = Math.max(1, ataque + random.nextInt(6) - defensaEnemigo);
                                 vidaEnemigo -= dañoJugador;
-                                System.out.println(VERDE + "¡" + nombre + " hizo" + dañoJugador + " de daño!");
-                                System.out.println(AMARILLO + "A " + enemigo + "le quedan " + Math.max(0, vidaEnemigo) + RESET);
+                                System.out.println(VERDE + "¡" + nombre + " hizo " + dañoJugador + " de daño!" + RESET);
+                                System.out.println(AMARILLO + "A " + enemigo + " le quedan " + Math.max(0, vidaEnemigo) + RESET);
                                 break;
 
                             case 2:
@@ -237,7 +237,7 @@ public class App {
                             case 3:
                                 if (random.nextInt(10) < 5) {
                                     System.out.println(AMARILLO + nombre + " escapo con éxito" + RESET);
-                                    combateActivo = false
+                                    combateActivo = false;
                                 } else {
                                     System.out.println(ROJO + "No pudistes escapar del combate" + RESET);
                                 }
@@ -268,7 +268,7 @@ public class App {
                             System.out.println(AMARILLO + "Una vez terminado el ritual, el brujo continua su peregrinaje por esta tierra maldita." + RESET);
                         }else if (rol.equals("SOLDADO") && enemigo.equals("DRON DE GUERRA")) {
                             System.out.println(AMARILLO + "Miras los restos del dron de guerra ardiendo en la arena del yermo, recuerdas a esas viejas pero mortiferas armas de una antigua guerra que pensaste haber olvidado."  + RESET);
-                            System.out.println(AMARILLO + "Los recuerdos te queman por dentro, pero no expresas nada, solo sigues tu camino en busca de una escapatoria de este planeta asolado...");
+                            System.out.println(AMARILLO + "Los recuerdos te queman por dentro, pero no expresas nada, solo sigues tu camino en busca de una escapatoria de este planeta asolado..." + RESET);
                         }else if(rol.equals("FANATICO")){
                             System.out.println("Estas exausto por el combate, pero aun asi sigues, todo sea por tu señor todo poderoso y su palabra.");
                             System.out.println("Sigues tu camino, agarrando el rosario como un clavo ardiente y repitiendo en tu mente los versiculos del todo poderoso...");
@@ -294,7 +294,11 @@ public class App {
                 }
 
                 if (vida <= 0) {
-                    
+                    System.out.println("\n");
+                    System.out.println(ROJO + "PERDISTE LA PARTIDA" + RESET);
+                }else{
+                    System.out.println(VERDE + "Sobreviviste, la aventura continua..." + RESET);
+                    System.out.println(VERDE + "Vida restante: " + vida + RESET);
                 }
                 break;
                 
@@ -302,5 +306,7 @@ public class App {
             default:
                System.out.println(ROJO + "Opción no valida" + RESET);
         } 
+
+        scanner.close();
     }
 }
