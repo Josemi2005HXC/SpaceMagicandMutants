@@ -34,6 +34,7 @@ public class App {
             "CAZARRECOMPENSAS"
         };
 
+        //*Enemigos */
         final String[] enemigos = {
             "DRON DE GUERRA",
             "MUTANTE PISTOLERO",
@@ -261,7 +262,7 @@ public class App {
                         // nuestros dialogos y opciones de interaccion varien entre si, ejemplos como que un simple lugar 
                         // traiga malos recuerdos de la guerra a un soldado, 
                         // comentarios racistas del fanatico hacia impuros (aliens y mutantes) u hostiles contra los blasfemos (brujos),
-                        // ser recibido con insultos en cientos lugares si somos un mutante*/
+                        // ser recibido con insultos en cientos lugares si somos un mutante...*/
 
                         if (rol.equals("BRUJO") && !enemigo.equals("DRON DE GUERRA")) {
                             System.out.println(AMARILLO + "El brujo observa el cuerpo sin vida del " + enemigo.toLowerCase() + " y comienza el pequeño ritual, todo siervo del Kaos debe obtener sus sustento." + RESET);
@@ -277,8 +278,9 @@ public class App {
                             System.out.println(AMARILLO + "Sacas tu botella de Jack, pero te das cuenta de que ya no queda nada" + RESET);
                             System.out.println(AMARILLO + nombre + ": ¡ME CAGO EN SU PUTA MADRE --, gritas" + RESET); //*Esto puede dar pie a un futuro sistema de rasgos: alcoholismo, cleptomania, empatia... */
                             System.out.println(AMARILLO + nombre + ": Tendre que reabastecerme en la siguiente ciudad, espero que el hombre al que estoy dando caza merezca la pena --" + RESET);
-
-                        }   
+                        }else if(rol.equals("FANATICO") && enemigo.equals("MUTANTE")){
+                            System.out.println("Miras al sucio mutante con asco, ser impuro, hasta la muerte te parece demasiado piadosa para el...");
+                        }
                     }else if (vida <= 0) {
                         System.out.println("\n");
                         System.out.println(ROJO + "|==============================|" + RESET);
