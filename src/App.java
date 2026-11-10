@@ -61,7 +61,7 @@ public class App {
         int OPCION_MENU = scanner.nextInt();
         scanner.nextLine();
         
-        switch (OPCION_MENU) {
+        switch (opcionMenu) {
 
             case 1:
                 System.out.println(VERDE + "|---------------------|" + RESET);
@@ -96,7 +96,7 @@ public class App {
                     if(!Arrays.asList(ESPECIES).contains(especie)){ //*si la varible insertada con scanner no coincide con ningun valor del array, pondra el mensaje rojo */
                         System.out.println(ROJO + "OPCION NO EXISTENTE, PRUEBE OTRA VEZ" + RESET);
                     }
-                } while (!Arrays.asList(ESPECIES).contains(especie)); //*hacemos que mientras la variable especies no es te en el Array se ejecute el bucle */
+                } while (!Arrays.asList(ESPECIES).contains(especie)); //*hacemos que mientras la variable especies no este en el Array se ejecute el bucle */
                
                 
                 System.out.println(AZUL + "|---------------------|" + RESET);
@@ -278,7 +278,7 @@ public class App {
                             System.out.println(AMARILLO + "Sacas tu botella de Jack, pero te das cuenta de que ya no queda nada" + RESET);
                             System.out.println(AMARILLO + nombre + ": ¡ME CAGO EN SU PUTA MADRE --, gritas" + RESET); //*Esto puede dar pie a un futuro sistema de rasgos: alcoholismo, cleptomania, empatia... */
                             System.out.println(AMARILLO + nombre + ": Tendre que reabastecerme en la siguiente ciudad, espero que el hombre al que estoy dando caza merezca la pena --" + RESET);
-                        }else if(rol.equals("FANATICO") && enemigo.equals("MUTANTE")){
+                        }else if(rol.equals("FANATICO") && enemigo.equals("MUTANTE PISTOLERO")){
                             System.out.println("Miras al sucio mutante con asco, ser impuro, hasta la muerte te parece demasiado piadosa para el...");
                         }
                     }else if (vida <= 0) {
@@ -299,7 +299,7 @@ public class App {
                     System.out.println("\n");
                     System.out.println(ROJO + "PERDISTE LA PARTIDA" + RESET);
                 }else{
-                    System.out.println(VERDE + "Sobreviviste, la aventura continua..." + RESET);
+                    System.out.println(VERDE + "CONTINUARA..." + RESET);
                     System.out.println(VERDE + "Vida restante: " + vida + RESET);
                 }
                 break;
