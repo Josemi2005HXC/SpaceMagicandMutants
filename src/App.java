@@ -58,7 +58,7 @@ public class App {
         System.out.println(MORADO + "|EMPEZAR: 2           |" + RESET);
         System.out.println(MORADO + "|---------------------|\n" + RESET);
         System.out.print(VERDE + "Seleccione una opcion: " + RESET);
-        int OPCION_MENU = scanner.nextInt();
+        int opcionMenu = scanner.nextInt();
         scanner.nextLine();
         
         switch (opcionMenu) {
