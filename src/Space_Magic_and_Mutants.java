@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -18,14 +17,14 @@ public class Space_Magic_and_Mutants {
         final String RESET = "\u001B[0m";
         
         //* ESPECIES */
-        final String[] ESPECIES = {
+        String[] ESPECIES = {
             "HUMANOIDE",
             "MUTANTE",
             "ROBOT",
             "ALIEN"
         };
         /* ROLES */
-        final String[] ROLES ={
+        String[] ROLES ={
             "SOLDADO",
             "BRUJO",
             "FANATICO",
@@ -35,7 +34,7 @@ public class Space_Magic_and_Mutants {
         };
 
         //*Enemigos */
-        final String[] enemigos = {
+        String[] enemigos = {
             "DRON DE GUERRA",
             "MUTANTE PISTOLERO",
             "BANDIDO",
@@ -74,9 +73,138 @@ public class Space_Magic_and_Mutants {
         switch (opcionMenu) {
 
             case 1:
-                System.out.println(VERDE + "|---------------------|" + RESET);
-                System.out.println(VERDE + "|---------GUIA--------|" + RESET);
-                System.out.println(VERDE + "|---------------------|" + RESET);
+
+                int opcionGuia;
+
+                do{
+                    System.out.println(VERDE + "|---------------------|" + RESET);
+                    System.out.println(VERDE + "|---------GUIA--------|" + RESET);
+                    System.out.println(VERDE + "|---------------------|" + RESET);
+                    System.out.println(VERDE + "|COMBATES: 1          |" + RESET);
+                    System.out.println(VERDE + "|ESPECIES: 2          |" + RESET);
+                    System.out.println(VERDE + "|ROLES: 3             |" + RESET);
+                    System.out.println(VERDE + "|SALIR: 4             |" + RESET);
+                    System.out.println(VERDE + "|---------------------|\n" + RESET);
+                    System.out.print(NARANJA + "Seleccione una opcion: " + RESET);
+                    opcionGuia = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (opcionGuia <= 0 || opcionGuia >= 4) {
+                        System.out.println(ROJO + "Opcion no valida, seleccione otra" + RESET);
+                    }
+
+                }while(opcionGuia <= 0 || opcionGuia >= 5);
+
+                switch(opcionGuia) {
+
+                    case 1:
+                        System.out.println(VERDE + "\n" + RESET);
+                        System.out.println(VERDE + "|==============================|" + RESET);
+                        System.out.println(VERDE + "|===========COMBATES===========|" + RESET);
+                        System.out.println(VERDE + "|==============================|" + RESET);
+                        System.out.println(VERDE + "\n" + RESET);
+                        System.out.println(AZUL + "El combate es por turno, el jugador podra elegir una accion cada turno," + RESET);
+                        System.out.println(AZUL + "para ganar el jugador debera acabar con los puntos de vida del enemigo," + RESET);
+                        System.out.println(AZUL + "si los puntos del jugador llegan a 0 la partida se acaba la partida." + RESET);
+                        System.out.println(VERDE + "\n" + RESET);
+                    break;
+
+                    case 2:
+                        System.out.println(VERDE + "\n" + RESET);
+                        System.out.println(VERDE + "|==============================|" + RESET);
+                        System.out.println(VERDE + "|===========ESPECIES===========|" + RESET);
+                        System.out.println(VERDE + "|==============================|" + RESET);
+                        System.out.println(VERDE + "\n" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| MUTANTES:                                                                                                |" + RESET);
+                        System.out.println(AZUL + "| Los mutantes pese a estar perseguidos y ser estigmatizados por casi toda la galaxia son de las especies  |" + RESET);
+                        System.out.println(AZUL + "| más comununes de toda la galaxia, no caen bien por su condicion de mutantes, pero poseen una agilidad    |" + RESET);
+                        System.out.println(AZUL + "| sin precedentes e incluso algunas mutaciones son algo más que feos tumores o deformidades...             |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| ALIENS:                                                                                                  |" + RESET);
+                        System.out.println(AZUL + "| Un termino despectivo que los humanos usanpara referirse a los sus vecinos espaciales para referirse     |" + RESET);
+                        System.out.println(AZUL + "| a sus vecinos de otros planetas, entre ellos encontraremos fascinantes criaturas y civilizaciones,       |" + RESET);
+                        System.out.println(AZUL + "| con distintas habilidades, poderes y diferentes culturas.                                                |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| ROBOTS:                                                                                                  |" + RESET);
+                        System.out.println(AZUL + "| La forma de vida no organica por excelencia, seres con emociones artificiales y programados para una     |" + RESET);
+                        System.out.println(AZUL + "| tarea distinta, desde las maquinas de guerra, los robots de compañia y etc.                              |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| HUMANOIDES:                                                                                              |" + RESET);
+                        System.out.println(AZUL + "| La especie más extendida de la galaxia, desde los humanos originarios de la tierra, hasta los humanos    |" + RESET);
+                        System.out.println(AZUL + "| modificados artificialmente, pasando por los pieles rojas de marte o los gigantes del gran congelado.    |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        
+
+                    break;
+
+                    case 3:
+                        System.out.println(VERDE + "\n" + RESET);
+                        System.out.println(VERDE + "|==============================|" + RESET);
+                        System.out.println(VERDE + "|============ROLES=============|" + RESET);
+                        System.out.println(VERDE + "|==============================|" + RESET);
+                        System.out.println(VERDE + "\n" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| SOLDADO:                                                                                                 |" + RESET);
+                        System.out.println(AZUL + "| Los soldados son un rol especializado en armas de fuego y dotados de gran arsenal y concimiento de armas,|" + RESET);
+                        System.out.println(AZUL + "| tambien dotados de una gran resistencia al dolor y los daños debido a las modificaciones geneticas.      |" + RESET);
+                        System.out.println(AZUL + "| Dentro de este rol encontramos a los soldados imperiales, soldados renegados, criminales de guerra y     |" + RESET);
+                        System.out.println(AZUL + "| los guerrilleros.                                                                                        |" + RESET);
+                        System.out.println(AZUL + "|                                                                                                          |" + RESET);
+                        System.out.println(AZUL + "|   --ARMAMENTO DISPONIBLE--                                                                               |" + RESET);
+                        System.out.println(AZUL + "|     Rifles de asalto, pistolas pesadas, pistolas ligeras, subfusiles, cuchillos de guerra, granadas,     |" + RESET);
+                        System.out.println(AZUL + "|     francotiradores, rifles semi-automaticos, ametralladoras pesadas.                                    |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| BRUJOS:                                                                                                  |" + RESET);
+                        System.out.println(AZUL + "| Este rol se basa en el uso de la magia, desde sus barajas del tarot hasta sus instrumentos magicos       |" + RESET);
+                        System.out.println(AZUL + "| pasando por los bastones magicos para atacar, ganar bonificaciones, invocar criaturas o o inflingir      |" + RESET);
+                        System.out.println(AZUL + "| estados a sus enemigos.                                                                                  |" + RESET);
+                        System.out.println(AZUL + "| Todo brujo debe sus poderes a un señor, ya sea Kaos u otras fuerzas oscuras mucho más temibles.          |" + RESET);
+                        System.out.println(AZUL + "|                                                                                                          |" + RESET);
+                        System.out.println(AZUL + "|   --ARMAMENTO DISPONIBLE--                                                                               |" + RESET);
+                        System.out.println(AZUL + "|   Bastones magicos, espadas ligeras, barajas de cartas, instrumentos de musica, anillos magicos,         |" + RESET);
+                        System.out.println(AZUL + "|   daga ritual.                                                                                           |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| FANATICO:                                                                                                |" + RESET);
+                        System.out.println(AZUL + "| Los fanaticos son humanos que solo sirven al imperio y su opresiva religion, procesan tal fanatismo y    |" + RESET);
+                        System.out.println(AZUL + "| fe ciega que les protege (o ellos creen), de todos los males. Se basan en el uso de sus santas           |" + RESET);
+                        System.out.println(AZUL + "| escrituras, rosarios y talismanes para protegerse y purgar a sus enemigos.                               |" + RESET);
+                        System.out.println(AZUL + "|                                                                                                          |" + RESET);
+                        System.out.println(AZUL + "|   --ARMAMENTO DISPONIBLE--                                                                               |" + RESET);
+                        System.out.println(AZUL + "|   Rosarios, espadas ligeras, agua bendita, libro, anillos magicos, talisman bendecido, crucifijo.        |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| BANDIDO:                                                                                                 |" + RESET);
+                        System.out.println(AZUL + "| La escoria del espacio, los repudiados de la galaxia, su unica forma de vida es el crimen, poseen        |" + RESET);
+                        System.out.println(AZUL + "| extraordinarias habilidades para el robo y gran conocimiento de escondites y pasadizos.                  |" + RESET);
+                        System.out.println(AZUL + "| escrituras, rosarios y talismanes para protegerse y purgar a sus enemigos.                               |" + RESET);
+                        System.out.println(AZUL + "|                                                                                                          |" + RESET);
+                        System.out.println(AZUL + "|   --ARMAMENTO DISPONIBLE--                                                                               |" + RESET);
+                        System.out.println(AZUL + "|   Navajas, pistolas ligeras, pistolas de chatarra, cuchillos, explosivos improvisados, molotov,          |" + RESET);
+                        System.out.println(AZUL + "|   garrotes de basura, bate con pinchos, cadenas, puño americano, palanca.                                |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| GUERRERO:                                                                                                |" + RESET);
+                        System.out.println(AZUL + "| Los gurreros se basan principalmente en el combate cuerpo a cuerpo, tenemos desde los gladiadores,       |" + RESET);
+                        System.out.println(AZUL + "| guerreros salvajes. Los guerreros cuentan con un codigo de honor bastante fuerte y unas habilidades      |" + RESET);
+                        System.out.println(AZUL + "| de supervivencia.                                                                                        |" + RESET);
+                        System.out.println(AZUL + "|                                                                                                          |" + RESET);
+                        System.out.println(AZUL + "|   --ARMAMENTO DISPONIBLE--                                                                               |" + RESET);
+                        System.out.println(AZUL + "|   Mazas, espadas pesadas, lanzas, cuchillos de caza, cerbatanas, hachas, garrotes.                       |" + RESET);
+                        System.out.println(AZUL + "|                                                                                                          |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+                        System.out.println(AZUL + "| CAZARRECOMPESAS:                                                                                         |" + RESET);
+                        System.out.println(AZUL + "| Los cazarrecompensas se ganan la vida con buscando y eleminando a sus objetivos, cuentas con equipo      |" + RESET);
+                        System.out.println(AZUL + "| y medios que utilizaran para dar caza a su presa. Son habiles, astutos y letales.                        |" + RESET);
+                        System.out.println(AZUL + "|                                                                                                          |" + RESET);
+                        System.out.println(AZUL + "|   --ARMAMENTO DISPONIBLE--                                                                               |" + RESET);
+                        System.out.println(AZUL + "|   Pistolas, cuchillos, escopetas ligeras, subfusiles, francotiradores, trampas, navajas.                 |" + RESET);
+                        System.out.println(AZUL + "|----------------------------------------------------------------------------------------------------------|" + RESET);
+
+
+                    break;
+
+                    default:
+                        break;
+                }
                 break;
 
             case 2:
