@@ -8,17 +8,7 @@ Nuestro personaje empieza en el mundo muerto, un planeta antes prospero pero deb
 
 El combate sera por turnos, en cada uno de nuestros turnos deberemos elegir nuestras acciones.
 
-## OPCIONES DEL MENU:
 
-## 1. GUIA:
+## v1.1.0:
 
-Esta sera nuestra pequeña guia sobre los roles, especies y los enemigos, dandonos informacion tanto de su comportamiento en combate como de su transfondo.
-
-## 2. EMPEZAR:
-
-Aqui es donde empezara nuestra aventura, deberemos elegir una especie dentro de las indicadas y un rol dentro de los indicados, dependiendo de nuestra especie y rol tendremos una ventajas, desventajas y comportamiento diferentes.
-
-
-## v0.1.0:
-
-De momento la version del juego solo implementa un menu, selecciom de roles y especie, pequeños dialogos segun el rol y combates con enemigos como lo son Bandidos, Mutantes, Robots y drones.
+De momento existen solo combates, se implemento una opcion de salir, se añadieron bucles en los menus, se corrigio el error de pasar turno al elegir una accion no valida y se corrigio el error que impedia al fanatico decir su mensaje al vencer al Mutante Pistolero.
