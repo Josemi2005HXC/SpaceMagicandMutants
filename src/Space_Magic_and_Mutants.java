@@ -400,12 +400,6 @@ public class Space_Magic_and_Mutants {
                         System.out.println(VERDE + "       ¡ENEMIGO DERROTADO!     " + RESET);
                         System.out.println(VERDE + "|==============================|" + RESET);
 
-                        //*Esto es una pequeña prueba para mejorar y expandir en el futuro, con .equals 
-                        // lo que se busca es que segun el rol o especie seleccionadas
-                        // nuestros dialogos y opciones de interaccion varien entre si, ejemplos como que un simple lugar 
-                        // traiga malos recuerdos de la guerra a un soldado, 
-                        // comentarios racistas del fanatico hacia impuros (aliens y mutantes) u hostiles contra los blasfemos (brujos),
-                        // ser recibido con insultos en cientos lugares si somos un mutante...*/
 
                         if (rol.equals("BRUJO") && !enemigo.equals("DRON DE GUERRA")) {
                             System.out.println(AMARILLO + "El brujo observa el cuerpo sin vida del " + enemigo.toLowerCase() + " y comienza el pequeño ritual, todo siervo del Kaos debe obtener sus sustento." + RESET);
